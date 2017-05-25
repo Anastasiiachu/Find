@@ -13,6 +13,7 @@ import static Find_program.Find.find;
 public class FindTest {
     @Test
     public void test1() {
+        /*test*/
         List<String> files = Arrays.asList("/Users/new/IdeaProjects/find/out/1/4/1.txt",
                 "/Users/new/IdeaProjects/find/out/1/2/6/1.txt",
                 "/Users/new/IdeaProjects/find/out/1/4/12/1.txt");
