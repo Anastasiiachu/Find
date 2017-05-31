@@ -26,8 +26,9 @@ public class FindTest {
 
     @Test
     public void test2() {
-        List<String> files = Arrays.asList("/Users/new/IdeaProjects/find/out/1/3/9/3.txt",
-                "/Users/new/IdeaProjects/find/out/1/4/12/3.txt");
+        List<String> files = new ArrayList<>();
+        files.add(new File("out/1/3/9/3.txt").getAbsolutePath());
+        files.add(new File("out/1/4/12/3.txt").getAbsolutePath());
         try {
             assertEquals(files, find(new Flags(new String[]{"-r", "3.txt"}), new File("out/1")));
         } catch (IOException e) {
@@ -37,10 +38,13 @@ public class FindTest {
 
     @Test
     public void test3() {
+        List<String> files = new ArrayList<>();
+        files.add(new File("out/1/2/6/2.txt").getAbsolutePath());
         try {
-            find(new Flags(new String[]{"-r", "2.txt"}), new File("out/2")).forEach(System.out::println);
+            assertEquals(files, find(new Flags(new String[]{"2.txt"}), new File("out/1/2/6")));
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 }
